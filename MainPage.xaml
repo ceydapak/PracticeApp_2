@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeApp3.MainPage"
+             xmlns:pic="clr-namespace:PracticeApp3.Components.Pickers"
+             xmlns:btn="clr-namespace:PracticeApp3.Components.Buttons"
+             BindingContext="{StaticResource ViewModel }">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <pic:PickerComp x:Name="current" Title ="Select a current" ItemsSource="{Binding Currents}" ItemDisplayBinding="{Binding CurrentCode}" PickerSelect="current_PickerSelect"/>
+            <pic:PickerComp x:Name="order" Title="Select a order" ItemsSource="{Binding Orders}" ItemDisplayBinding="{Binding OrderId}" PickerSelect="order_PickerSelect"/>
+            <pic:PickerComp x:Name="orderItems" Title="Select an order item" ItemsSource="{Binding OrderItems}" ItemDisplayBinding="{Binding DocumentSerialNumber}" PickerSelect="orderItems_PickerSelect"/>
+            <btn:ButtonComp x:Name="save" Text="Save" C="save_C"/>
+            <Label x:Name="label1"/>
+            <Label x:Name="label2"/>
+            <Label x:Name="label3"/>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
